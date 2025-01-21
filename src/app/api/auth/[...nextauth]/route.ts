@@ -20,7 +20,11 @@ const authOptions: NextAuthOptions = {
     CredentialsProvider({
       name: "Email and Password",
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "email@example.com" },
+        email: {
+          label: "Email",
+          type: "text",
+          placeholder: "email@example.com",
+        },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
@@ -32,7 +36,7 @@ const authOptions: NextAuthOptions = {
 
         try {
           // Call your backend API to authenticate the user
-          const response = await fetch("http://localhost:4000/api/login", {
+          const response = await fetch("http://localhost:8080/api/sign-in", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -73,7 +77,7 @@ const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   pages: {
-    signIn: "/signin", // Redirect users to this page for sign-in
+    signIn: "auth/signin",
   },
 };
 
