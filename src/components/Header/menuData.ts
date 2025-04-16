@@ -55,7 +55,12 @@ export const menuData: Menu[] = [
         newTab: false,
         path: "/contact",
       },
-
     ],
-  }
+  },
+  {
+    id: 7,
+    title: "Seller Dashboard",
+    newTab: false,
+    path: "/seller/dashboard",
+  },
 ];
